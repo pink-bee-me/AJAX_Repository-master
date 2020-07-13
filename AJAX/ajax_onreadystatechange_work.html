@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>                                              
+        <meta charset="utf-8">
+        <title>Ajax Assignment</title>
+        <link rel="stylesheet" href="style_ajax_onreadystatechange.css">
+    </head>
+    <body>
+        <div class="ticket_info">
+            <h2> Get<span> Lana del Rey </span>ticket information : </h2>
+            <div class ="content" id="content">
+             <label for="zip">Enter Zip Code</label>
+                <input type="text" id ="zip" value =""/>
+                <input type="button" class="button" value="Get Ticket Info." id="btn_content" onclick="getContent();"/>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        // Step 1: create the http request object  w/  XML //
+                  var ajax = new XMLHttpRequest() ;
+       // Step 2: prepare the open ajax request //
+                 ajax.open("GET", "ajax_onreadystatechange_content.html");
+       // Step 3: Define the ajax response callback method //                   
+       ajax.onreadystatechange = function() {
+            if  ( ajax.readyState ==4 ) {
+                document.getElementById("content").innerHTML = ajax.responseText;
+            } 
+       }
+       // Step 4: send ajax request for data ( set-up a trigger) //
+       function getContent() {
+           ajax.send();
+           document.getElementById("btn_content").style.display="none";
+       }
+</script>
+</body>
+</html>
