@@ -14,7 +14,8 @@
                 <input type="button" class="button" value="Get Ticket Info." id="btn_content" onclick="getContent();"/>
             </div>
         </div>
-
+        <div id="content_response">
+        </div>
         <script type="text/javascript">
         // Step 1: create the http request object  w/  XML //
                   var ajax = new XMLHttpRequest() ;
@@ -30,6 +31,7 @@
        function getContent() {
            ajax.send();
            document.getElementById("btn_content").style.display="none";
+        document.getElementById("")
        }
 </script>
 </body>
